@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">IoT Dashboard</h1>
+        
+        <div class="row mb-3">
+            <div class="col text-center">
+                <button id="led-on" class="btn btn-success">Turn LED On</button>
+                <button id="led-off" class="btn btn-danger">Turn LED Off</button>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col">
+                <canvas id="dataChart"></canvas>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col text-center">
+                <h2>Predictions</h2>
+                <p>Predicted Humidity: <span id="predicted-humidity"></span></p>
+                <p>Predicted Temperature: <span id="predicted-temperature"></span></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Messages</h2>
+                <div id="messages-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>
